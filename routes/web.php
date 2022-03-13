@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerDrinks;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::view('/', 'default', [ControllerDrinks::class, 'show', 'title' => 'Drinks']);
+Route::get('/', [ControllerDrinks::class, 'index']);
+
