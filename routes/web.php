@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::view('/', 'default', [ControllerDrinks::class, 'show', 'title' => 'Drinks']);
 Route::get('/', [ControllerDrinks::class, 'index']);
 
