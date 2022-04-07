@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Drink;
+use App\Models\Ingridient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +17,6 @@ class ControllerDrinks extends Controller
      */
     public function index()
     {
-        $drinkWithIngridient = Drink::with(['ingridients'])->get();
         return view('default', [
             'title' => 'Drinks',
             'drinks' => Drink::with(['ingridients'])->get()

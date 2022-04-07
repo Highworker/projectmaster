@@ -149,20 +149,26 @@
                                     </div><!-- dotted title -->
                                     <p><strong>Description: </strong>{{$drink->description}}</p>
                                     <p><strong>Making: </strong>{{$drink->making}}</p>
-                                    <!-- <div class="rating-star">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <span>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </span>
-                                    </div> rating star -->
+                                    <p><strong>Ingridients: </strong>
+                                        @foreach($drink->ingridients as $ingridient)
+                                            <p> {{$ingridient->name}} </p>
+                                        @endforeach
+                                    </p>
+
+                                        <!-- <div class="rating-star">
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <span>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star-half-o"></i>
+                                                    </span>
+                                            </div> rating star -->
                                 </div><!-- food item details -->
                             </div><!-- food item -->
                         </div> <!-- element-item -->
@@ -373,7 +379,7 @@
         <i class="fa fa-angle-up"></i>
     </div>
     <div class="footer-bottom">
-        <p>&copy; <span>Tomato</span> 2016, All Right Reserves  |  Design by <a href="#">LabArtisan</a></p>
+        <p>&copy; <span>Tomato</span> 2022, All Right Reserves  |  Design by <a href="#">LabArtisan</a></p>
     </div><!-- footer-bottom -->
 </footer><!-- Footer End-->
 
