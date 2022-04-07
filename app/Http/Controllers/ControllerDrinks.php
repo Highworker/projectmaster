@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Drink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ControllerDrinks extends Controller
 {
@@ -15,10 +16,12 @@ class ControllerDrinks extends Controller
      */
     public function index()
     {
+        $drinkWithIngridient = Drink::with(['ingridients'])->get();
         return view('default', [
             'title' => 'Drinks',
-            'drinks' => Drink::all()
-        ]);    }
+            'drinks' => Drink::with(['ingridients'])->get()
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

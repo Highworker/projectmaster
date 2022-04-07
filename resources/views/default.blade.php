@@ -1,85 +1,382 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
-
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<!-- Preloder
+<div id="preloder">
+    <div id="preloder-center">
+        <div id="preloder-center-absolute">
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+            <div class="object"></div>
+        </div>
+    </div>
+</div>
+-->
+<!-- Header -->
+<header class="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="header-top-left">
+                    <ul>
+                        <li><i class="fa fa-home"></i>Suite 02, Sahera Tropical</li>
+                        <li><i class="fa fa-phone"></i>+8801 118 171 511</li>
+                        <li><i class="fa fa-calendar"></i>Mon - Fri 9.00 am - 7.00 pm </li>
+                    </ul>
+                </div><!-- Header top left -->
+                <div class="header-top-right">
+                    <div class="social-profiles">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                            <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                        </ul>
+                    </div><!-- Social profiles -->
+                    <div class="book-table">
+                        <a href="#">Book a table</a>
+                    </div> <!-- Book a table -->
+                </div><!-- Header top Right -->
+            </div>
+        </div><!-- Container -->
+    </div><!-- Header top -->
+    <div class="logo-search-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="search-box">
+                        <form class="search-form">
+                            <input type="search" placeholder="Search Your Queries">
+                            <button type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form><!-- Search form -->
+                    </div><!-- Search area -->
                 </div>
-            @endif
-
-            <div class="max-w-12xl mx-auto sm:px-12 lg:px-12">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <h1 class="text-gray-900 dark:text-white">{{ $title }}</h1>
+                <div class="col-md-4 col-sm-4">
+                    <div class="logo">
+                        <a href="index.html"><img src="/images/logo.png" alt=""></a>
+                    </div><!-- logo -->
                 </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1">
-                        @foreach($drinks as $drink)
-                            <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0">
-                                <div class="flex items-center">
-                                    <div class="ml-4 text-lg leading-7 font-semibold"><a href="#" class="underline text-gray-900 dark:text-white">{{ $drink->name}}</a></div>
-                                </div>
-
-                                <div class="ml-4">
-                                    <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        <strong>Description: </strong> {{$drink->description}}
-                                    </div>
-                                    <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                        <strong>Making: </strong> {{$drink->making}}
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-left">
-                            <a href="https://github.com/Highworker/drinkbook" class="ml-1">
-                                Highworker / drinkbook
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ml-4 text-right text-sm text-gray-500 sm:text-right sm:ml-0">
-                        PHP v{{ PHP_VERSION }}
-                    </div>
-                    <hr>
-                    <div class="ml-4 text-right text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }}
-                    </div>
+                <div class="col-md-4 col-sm-4">
+                    <!-- cart -->
                 </div>
             </div>
+        </div><!-- container -->
+    </div><!-- Logo and search area -->
+    <!-- main menu -->
+    <div class="main-menu main-nav style-1">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="#">
+                        <img src="/images/logo2.png" alt="">
+                    </a>
+                    <div class="search-area">
+                        <i class="fa fa-search icon-1"></i>
+                        <i class="fa fa-times icon-2"></i>
+                        <form class="search-form">
+                            <input type="search" placeholder="Search Your Queries">
+                        </form><!-- Search form -->
+                    </div>
+                </div><!-- navbar header -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home </a>
+                            <ul class="dropdown-menu sub-menu">
+                                <li class="active-child-menu"><a href="index.html"><i class="fa fa-angle-double-right"></i>Homepage one</a></li>
+                                <li><a href="index-2.html"><i class="fa fa-angle-double-right"></i>Homepage two</a></li>
+                                <li><a href="index-3.html"><i class="fa fa-angle-double-right"></i>Homepage three</a>
+                                </li>
+                            </ul><!-- sub menu -->
+                        </li><!-- dropdown -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu sub-menu">
+                                <li><a href="menu-page-1.html"><i class="fa fa-angle-double-right"></i>Menu page one</a></li>
+                                <li><a href="menu-page-2.html"><i class="fa fa-angle-double-right"></i>Menu page two</a></li>
+                                <li><a href="menu-page-3.html"><i class="fa fa-angle-double-right"></i>Menu page three</a></li>
+                            </ul><!-- sub menu -->
+                        </li><!-- dropdown -->
+                        <li><a href="contact.html">Contacts</a></li>
+                    </ul><!-- navbar-nav -->
+                </div>
+            </div>
+        </div><!-- container -->
+    </div><!-- main menu -->
+</header><!-- Header End -->
+<section class="food-menu section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="section-head">
+                <i class="flaticon-cutlery"></i>
+                <h2>Our Drink Menu</h2>
+                <p>List of Drink recipes with Ingridients to make</p>
+            </div><!-- section-head -->
+            <div class="food-menu-item-wrapper">
+                <div class="grid">
+                    @foreach($drinks as $drink)
+                        <div class="element-item transition breakfast lunch drinks col-md-4 col-sm-6">
+                            <div class="food-item">
+                                <div class="food-item-img">
+                                </div>
+                                <div class="food-item-details">
+                                    <div class="dotted-title">
+                                        <div class="dotted-name">
+                                            <a href="#">{{ $drink->name}}</a>
+                                        </div>
+
+                                    </div><!-- dotted title -->
+                                    <p><strong>Description: </strong>{{$drink->description}}</p>
+                                    <p><strong>Making: </strong>{{$drink->making}}</p>
+                                    <!-- <div class="rating-star">
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <span>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </span>
+                                    </div> rating star -->
+                                </div><!-- food item details -->
+                            </div><!-- food item -->
+                        </div> <!-- element-item -->
+                    @endforeach
+                </div>
+            </div><!-- food-menu-item-wrapper -->
+            <!-- <div class="food-menu-btn">
+                <a href="#" class="button">View Full menu</a>
+            </div> -->
         </div>
-    </body>
+        <div id="filters" class="button-group">
+            <button class="button is-checked" data-filter=".drinks">Drinks</button>
+        </div><!--button group-->
+    </div><!-- container -->
+</section><!-- food menu section end-->
+<!-- Footer -->
+<footer>
+    <div class="footer-top">
+        <div class="section-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-widget-wrapper">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget">
+                                <h2 class="footer-widget-title">About tomato</h2>
+                                <div class="excerpt">
+                                    Efficiently atrix unique ecommerce ently enhance pallel results serdom anerment
+                                    Proactvey incubate Authatively leverage existing effetive methodologies through client awesome theme.
+                                </div>
+                                <h2 class="footer-btn">
+                                    <a href="#">Read more <i class="fa fa-angle-double-right"></i></a>
+                                </h2>
+                                <div class="payment-method">
+                                    <h2>Payment Method</h2>
+                                    <ul>
+                                        <li><a href="#"><img src="/images/payment-img1.png" alt=""></a></li>
+                                        <li><a href="#"><img src="/images/payment-img2.png" alt=""></a></li>
+                                        <li><a href="#"><img src="/images/payment-img3.png" alt=""></a></li>
+                                        <li><a href="#"><img src="/images/payment-img4.png" alt=""></a></li>
+                                        <li><a href="#"><img src="/images/payment-img5.png" alt=""></a></li>
+                                    </ul>
+                                </div><!-- payment-method -->
+                            </div><!-- footer-widget -->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget">
+                                <h2 class="footer-widget-title">Latest News</h2>
+                                <div class="footer-post-item-wrapper">
+                                    <ul>
+                                        <li class="post-item style-2">
+                                            <div class="post-thumb">
+                                                <a href="#"><img src="/images/footer-images/p-item1.jpg" alt=""></a>
+                                            </div>
+                                            <div class="post-content">
+                                                <a class="title" href="#">Corem ipsum dolor sit amet, consectetuer adipi</a>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li class="post-author">
+                                                            <a href="#">
+                                                                <i class="fa fa-user"></i>Somrat Islam
+                                                            </a>
+                                                        </li>
+                                                        <li class="post-comments">
+                                                            <a href="#"><i class="fa fa-comments-o"></i>32</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li><!-- post-item -->
+                                        <li class="post-item style-2">
+                                            <div class="post-thumb">
+                                                <a href="#"><img src="/images/footer-images/p-item2.jpg" alt=""></a>
+                                            </div>
+                                            <div class="post-content">
+                                                <a class="title" href="#">Corem ipsum dolor sit amet, consectetuer adipi</a>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li class="post-author">
+                                                            <a href="#">
+                                                                <i class="fa fa-user"></i>Somrat Islam
+                                                            </a>
+                                                        </li>
+                                                        <li class="post-comments">
+                                                            <a href="#"><i class="fa fa-comments-o"></i>32</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li><!-- post-item -->
+                                        <li class="post-item style-2">
+                                            <div class="post-thumb">
+                                                <a href="#"><img src="/images/footer-images/p-item3.jpg" alt=""></a>
+                                            </div>
+                                            <div class="post-content">
+                                                <a class="title" href="#">Corem ipsum dolor sit amet, consectetuer adipi</a>
+                                                <div class="meta-post">
+                                                    <ul>
+                                                        <li class="post-author">
+                                                            <a href="#">
+                                                                <i class="fa fa-user"></i>Somrat Islam
+                                                            </a>
+                                                        </li>
+                                                        <li class="post-comments">
+                                                            <a href="#"><i class="fa fa-comments-o"></i>32</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li><!-- post-item -->
+                                    </ul>
+                                </div>
+                            </div><!-- footer-widget -->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget">
+                                <h2 class="footer-widget-title">Twitter Widget</h2>
+                                <ul class="twitter-widget">
+                                    <li class="twitter-widget-item">
+                                        <div class="twitter-icon">
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                        </div>
+                                        <div class="twitter-widget-content">
+                                            <a href="#">
+                                                Raritas etiam procssus dysequitur mutaonem http://codexcoder.com
+                                                awesome theme market.
+                                            </a>
+                                            <span>23 Seconds ago</span>
+                                        </div>
+                                    </li><!-- twitter-widget-item -->
+                                    <li class="twitter-widget-item">
+                                        <div class="twitter-icon">
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                        </div>
+                                        <div class="twitter-widget-content">
+                                            <a href="#">
+                                                Duis autem eum #webcode.com dolor hendrerit in vulputate velit
+                                            </a>
+                                            <span>3 Months ago</span>
+                                        </div>
+                                    </li><!-- twitter-widget-item -->
+                                    <li class="twitter-widget-item">
+                                        <div class="twitter-icon">
+                                            <a href="#"><span class="fa fa-twitter"></span></a>
+                                        </div>
+                                        <div class="twitter-widget-content">
+                                            <a href="#">
+                                                @bonndu007 am liber tempor cum soluta nobis eleifend
+                                            </a>
+                                            <span>2 Years ago</span>
+                                        </div>
+                                    </li><!-- twitter-widget-item -->
+                                </ul>
+                            </div><!-- footer-widget -->
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget">
+                                <h2 class="footer-widget-title">Get in Touch</h2>
+                                <ul>
+                                    <li class="contact-item">
+                                        <div class="contact-item-left">
+                                            <span>Office Address</span>
+                                        </div>
+                                        <div class="contact-item-right">
+                                            <span>Suite 02, Level 12, Sahera Tropical Center 218 New Elephant Road, Dhaka -</span>
+                                        </div>
+                                    </li><!-- contact-item -->
+                                    <li class="contact-item">
+                                        <div class="contact-item-left">
+                                            <span>Phone Number</span>
+                                        </div>
+                                        <div class="contact-item-right">
+                                            <span>+8801111111111 - Mobile 02-1234567- Calephone</span>
+                                        </div>
+                                    </li><!-- contact-item -->
+                                    <li class="contact-item">
+                                        <div class="contact-item-left">
+                                            <span>Email Address</span>
+                                        </div>
+                                        <div class="contact-item-right">
+                                            <span>http://example.com support@example.com</span>
+                                        </div>
+                                    </li><!-- contact-item -->
+                                    <li class="contact-item">
+                                        <div class="contact-item-left">
+                                            <span>Follow Us</span>
+                                        </div>
+                                        <div class="social-profiles">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                                            </ul>
+                                        </div><!-- Social profiles -->
+                                    </li><!-- contact-item -->
+                                </ul>
+                            </div><!-- footer-widget -->
+                        </div>
+                    </div><!-- footer-widget-wrapper -->
+                </div>
+            </div><!-- container -->
+        </div><!-- section-overlay -->
+    </div><!-- footer-top -->
+    <!--Scroll top-->
+    <div class="scroll-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; <span>Tomato</span> 2016, All Right Reserves  |  Design by <a href="#">LabArtisan</a></p>
+    </div><!-- footer-bottom -->
+</footer><!-- Footer End-->
+
+<script src="/js/scripts.js"></script>
+</body>
 </html>
