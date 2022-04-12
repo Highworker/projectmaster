@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Models\Drink;
+use App\Orchid\Screens\DrinkListScreen;
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -30,6 +32,17 @@ use Tabuna\Breadcrumbs\Trail;
 */
 
 // Main
+Route::screen('drinks', DrinkListScreen::class)
+    ->name('platform.drink.list')
+    ->breadcrumbs(function (Trail $trail){
+        return $trail
+            ->parent('platform.index')
+            ->push('Drink recipe Add');
+    });
+
+Route::screen('/drinks/add', DrinkListScreen::class)->name('platform.drink.list');
+
+
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 
