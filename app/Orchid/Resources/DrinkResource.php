@@ -31,9 +31,9 @@ class DrinkResource extends Resource
      */
     public function onSave(ResourceRequest $request, Model $model)
     {
-        $r = $request->get('ingridients');
         $model->fill($request->all())->save();
-        if($r){
+        // TODO: can i use ternary operator for next IF?
+        if(($request->get('ingridients')) != null){
             $model->ingridients()->sync($request->get('ingridients'));
         }
     }

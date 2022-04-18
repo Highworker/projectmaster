@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ControllerDrinks;
+use App\Http\Controllers\ControllerIngridients;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ControllerDrinks::class, 'index']);
+Route::get('/drink/{id}', [ControllerDrinks::class, 'show']);
+Route::get('/ingridients', [ControllerIngridients::class, 'index']);
 
