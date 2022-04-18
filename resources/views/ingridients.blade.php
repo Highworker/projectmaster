@@ -35,7 +35,7 @@
                                     @endisset
                                     <p><strong>Drink Recipes - {{($ingridient->drinks)->count()}}: </strong>
                                         @foreach($ingridient->drinks as $drink)
-                                            <p> > {{$drink->name}} </p>
+                                        <p> > <a href="/drink/{{$drink->id}}">{{$drink->name}}</a> </p>
                                         @endforeach
                                     </p>
                                 </div><!-- food item details -->

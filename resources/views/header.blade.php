@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header-top">
-        <div class="container">
+        <div style="display: none" class="container">
             <div class="row">
                 <div class="header-top-left">
                     <ul>

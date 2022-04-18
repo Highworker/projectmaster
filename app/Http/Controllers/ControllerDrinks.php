@@ -25,7 +25,10 @@ class ControllerDrinks extends Controller
         ]);
     }
     public function show($id){
-        dump($id);
+        return view('show', [
+            'page_title' => 'Drinks',
+            'heading' => 'List of Drink recipes with Ingridients to make',
+            'drink' => Drink::with(['ingridients'])->find($id)
+        ]);
     }
-
 }
