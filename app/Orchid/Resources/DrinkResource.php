@@ -31,10 +31,11 @@ class DrinkResource extends Resource
      */
     public function onSave(ResourceRequest $request, Model $model)
     {
-        //TODO 1: forceFill() - "Undefined column: 7 ERROR: column "ingridients" of relation "drinks" does not exist" when setting Ingridients of Drink
-        $model->forceFill($request->all())->save();
-        //TODO 2: sync() - set Ingridient of Drink successfully works, but can't add new Drink
- //       $model->ingridients()->sync($request->get('ingridients'));
+        $r = $request->get('ingridients');
+        $model->fill($request->all())->save();
+        if($r){
+            $model->ingridients()->sync($request->get('ingridients'));
+        }
     }
 
     /**
