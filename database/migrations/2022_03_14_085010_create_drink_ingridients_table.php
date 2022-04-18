@@ -14,12 +14,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('drink_ingridients', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id('id')->autoIncrement();
             $table->timestamps();
-            $table->integer('drink_id');
-            $table->integer('ingridient_id');
-            $table->foreign('drink_id')->references('id')->on('drinks');
-            $table->foreign('ingridient_id')->references('id')->on('ingridients');
+            $table->foreignId('drink_id')
+                ->references('id')->on('drinks')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->foreignId('ingridient_id')
+                ->references('id')->on('ingridients')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');;
         });
     }
 
