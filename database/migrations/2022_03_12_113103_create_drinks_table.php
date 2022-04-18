@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('drinks', function (Blueprint $table) {
-            $table->id('id')->autoIncrement();
+            $table->id('id');
             $table->timestamps();
-            $table->string('name');
-            $table->string('making');
+            $table->string('name')->nullable(true);
+            $table->string('making')->nullable(true);
             $table->string('description')->nullable(true);
         });
     }
