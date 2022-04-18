@@ -13,11 +13,16 @@ class Ingridient extends Model
     use HasFactory;
     use AsSource, Filterable, Attachable;
 
+    protected $fillable = [
+        'id',
+        'name',
+        'description'
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function getDrinks(){
-        return $this->belongsToMany(Drink::class);
+    public function drinks(){
+        return $this->belongsToMany(Drink::class,'drink_ingridients');
     }
 }

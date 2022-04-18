@@ -28,7 +28,6 @@ class DrinkListScreen extends Screen
     public function query(Drink $drink): array
     {
         return [
-            'drinks' => Drink::all(),
             'drink' => $drink
         ];
     }
