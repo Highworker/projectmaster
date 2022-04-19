@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Drink;
-use App\Models\Ingridient;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 
-class ControllerDrinks extends Controller
+class DrinkController extends Controller
 {
 
     /**
@@ -15,7 +15,7 @@ class ControllerDrinks extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(): View
     {
         return view('drinks', [
             'title' => 'Our Drink Menu',
@@ -24,10 +24,14 @@ class ControllerDrinks extends Controller
             'drinks' => Drink::with(['ingridients'])->get()
         ]);
     }
-    public function show($id){
+
+    /**
+     * @param $id
+     * @return Application|Factory|View
+     */
+    public function show($id): View|Factory|Application
+    {
         return view('show', [
-            'page_title' => 'Drinks',
-            'heading' => 'List of Drink recipes with Ingridients to make',
             'drink' => Drink::with(['ingridients'])->find($id)
         ]);
     }

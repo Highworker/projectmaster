@@ -33,7 +33,7 @@ class DrinkResource extends Resource
     {
         $model->fill($request->all())->save();
         // TODO: can i use ternary operator for next IF?
-        if(($request->get('ingridients')) != null){
+        if ($request->get('ingridients')) {
             $model->ingridients()->sync($request->get('ingridients'));
         }
     }

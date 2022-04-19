@@ -15,8 +15,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('drink_ingridients', function (Blueprint $table) {
+            //TODO 3: drop id (use составной ключ), drop timestamps
             $table->id('id')->autoIncrement();
             $table->timestamps();
+            //TODO 2: OnDelete, OnCascade
             $table->foreignIdFor(Drink::class);
             $table->foreignId('ingridient_id');
         });

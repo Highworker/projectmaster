@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ControllerDrinks;
-use App\Http\Controllers\ControllerIngridients;
+use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\IngridientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ControllerDrinks::class, 'index']);
-Route::get('/drink/{id}', [ControllerDrinks::class, 'show']);
-Route::get('/ingridients', [ControllerIngridients::class, 'index']);
+/*
+Route::get('/', function () {
+    return view('drinks');
+});
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+*/
+
+Route::get('/', [DrinkController::class, 'index']);
+Route::get('/drink/{id}', [DrinkController::class, 'show']);
+Route::get('/ingridients', [IngridientController::class, 'index']);
+require __DIR__.'/auth.php';

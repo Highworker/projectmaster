@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ingridient;
 
-class ControllerIngridients extends Controller
+class IngridientController extends Controller
 {
     public function index()
     {
