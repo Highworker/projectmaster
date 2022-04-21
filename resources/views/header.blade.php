@@ -4,13 +4,18 @@
     <div class="logo-search-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4">
+                <div class="col-md-8 col-sm-8">
                     <div class="logo">
                         <a href="/"><img src="/images/logo.png" alt=""></a>
                     </div><!-- logo -->
                 </div>
+                @guest
+                    <div class="col-md-4 col-sm-4">
+                        @include('login-header')
+                    </div>
+                @endguest
                 <div class="col-md-4 col-sm-4">
-                    <!-- cart -->
+                    <p> Login as <strong>{{ $authUser->name }}</strong></p>
                 </div>
             </div>
         </div><!-- container -->
