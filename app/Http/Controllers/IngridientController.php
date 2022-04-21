@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ingridient;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Request;
+use Illuminate\View\View;
 
 class IngridientController extends Controller
 {
-    public function index()
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function index() :View|Factory|Application
     {
         return view('ingridients', [
             'title' => 'Ingridients',

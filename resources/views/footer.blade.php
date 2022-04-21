@@ -4,31 +4,20 @@
             <div class="container">
                 <div class="row">
                     <div class="footer-widget-wrapper">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="footer-widget">
-                                <h2 class="footer-widget-title">About tomato</h2>
+                                <h2 class="footer-widget-title">About Drinkbook</h2>
                                 <div class="excerpt">
-                                    Efficiently atrix unique ecommerce ently enhance pallel results serdom anerment
-                                    Proactvey incubate Authatively leverage existing effetive methodologies through client awesome theme.
+                                    Represent a Drink recipes, and Ingridients for these recipes
                                 </div>
                                 <h2 class="footer-btn">
-                                    <a href="#">Read more <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="https://github.com/Highworker/drinkbook" target="_blank">GitHub.com / Highworker / drinkbook <i class="fa fa-angle-double-right"></i></a>
                                 </h2>
-                                <div class="payment-method">
-                                    <h2>Payment Method</h2>
-                                    <ul>
-                                        <li><a href="#"><img src="/images/payment-img1.png" alt=""></a></li>
-                                        <li><a href="#"><img src="/images/payment-img2.png" alt=""></a></li>
-                                        <li><a href="#"><img src="/images/payment-img3.png" alt=""></a></li>
-                                        <li><a href="#"><img src="/images/payment-img4.png" alt=""></a></li>
-                                        <li><a href="#"><img src="/images/payment-img5.png" alt=""></a></li>
-                                    </ul>
-                                </div><!-- payment-method -->
                             </div><!-- footer-widget -->
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-6 col-sm-6">
                             <div class="footer-widget">
-                                <h2 class="footer-widget-title">Latest News</h2>
+                                <h2 class="footer-widget-title">Drinkbook News</h2>
                                 <div class="footer-post-item-wrapper">
                                     <ul>
                                         <li class="post-item style-2">
@@ -36,12 +25,12 @@
                                                 <a href="#"><img src="/images/footer-images/p-item1.jpg" alt=""></a>
                                             </div>
                                             <div class="post-content">
-                                                <a class="title" href="#">Corem ipsum dolor sit amet, consectetuer adipi</a>
+                                                <a class="title" href="#">There be a comments to recipes</a>
                                                 <div class="meta-post">
                                                     <ul>
                                                         <li class="post-author">
                                                             <a href="#">
-                                                                <i class="fa fa-user"></i>Somrat Islam
+                                                                <i class="fa fa-user"></i>some commenter
                                                             </a>
                                                         </li>
                                                         <li class="post-comments">
@@ -56,13 +45,12 @@
                                                 <a href="#"><img src="/images/footer-images/p-item2.jpg" alt=""></a>
                                             </div>
                                             <div class="post-content">
-                                                <a class="title" href="#">Corem ipsum dolor sit amet, consectetuer adipi</a>
+                                                <a class="title" href="#">There be a comments to recipes</a>
                                                 <div class="meta-post">
                                                     <ul>
                                                         <li class="post-author">
                                                             <a href="#">
-                                                                <i class="fa fa-user"></i>Somrat Islam
-                                                            </a>
+                                                                <i class="fa fa-user"></i>some commenter</a>
                                                         </li>
                                                         <li class="post-comments">
                                                             <a href="#"><i class="fa fa-comments-o"></i>32</a>
@@ -76,13 +64,12 @@
                                                 <a href="#"><img src="/images/footer-images/p-item3.jpg" alt=""></a>
                                             </div>
                                             <div class="post-content">
-                                                <a class="title" href="#">Corem ipsum dolor sit amet, consectetuer adipi</a>
+                                                <a class="title" href="#">There be a comments to recipes</a>
                                                 <div class="meta-post">
                                                     <ul>
                                                         <li class="post-author">
                                                             <a href="#">
-                                                                <i class="fa fa-user"></i>Somrat Islam
-                                                            </a>
+                                                                <i class="fa fa-user"></i>some commenter</a>
                                                         </li>
                                                         <li class="post-comments">
                                                             <a href="#"><i class="fa fa-comments-o"></i>32</a>
@@ -95,7 +82,7 @@
                                 </div>
                             </div><!-- footer-widget -->
                         </div>
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6"  style="display: none">
                             <div class="footer-widget">
                                 <h2 class="footer-widget-title">Twitter Widget</h2>
                                 <ul class="twitter-widget">
@@ -136,52 +123,6 @@
                                 </ul>
                             </div><!-- footer-widget -->
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="footer-widget">
-                                <h2 class="footer-widget-title">Get in Touch</h2>
-                                <ul>
-                                    <li class="contact-item">
-                                        <div class="contact-item-left">
-                                            <span>Office Address</span>
-                                        </div>
-                                        <div class="contact-item-right">
-                                            <span>Suite 02, Level 12, Sahera Tropical Center 218 New Elephant Road, Dhaka -</span>
-                                        </div>
-                                    </li><!-- contact-item -->
-                                    <li class="contact-item">
-                                        <div class="contact-item-left">
-                                            <span>Phone Number</span>
-                                        </div>
-                                        <div class="contact-item-right">
-                                            <span>+8801111111111 - Mobile 02-1234567- Calephone</span>
-                                        </div>
-                                    </li><!-- contact-item -->
-                                    <li class="contact-item">
-                                        <div class="contact-item-left">
-                                            <span>Email Address</span>
-                                        </div>
-                                        <div class="contact-item-right">
-                                            <span>http://example.com support@example.com</span>
-                                        </div>
-                                    </li><!-- contact-item -->
-                                    <li class="contact-item">
-                                        <div class="contact-item-left">
-                                            <span>Follow Us</span>
-                                        </div>
-                                        <div class="social-profiles">
-                                            <ul>
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
-                                            </ul>
-                                        </div><!-- Social profiles -->
-                                    </li><!-- contact-item -->
-                                </ul>
-                            </div><!-- footer-widget -->
-                        </div>
                     </div><!-- footer-widget-wrapper -->
                 </div>
             </div><!-- container -->
@@ -191,7 +132,7 @@
     <div class="scroll-top">
         <i class="fa fa-angle-up"></i>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bottom" style="display: none">
         <p>&copy; <span>Tomato</span> 2022, All Right Reserves  |  Design by <a href="#">LabArtisan</a></p>
     </div><!-- footer-bottom -->
 </footer><!-- Footer End-->
