@@ -6,6 +6,7 @@ use App\Models\Drink;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Request;
 
 class DrinkController extends Controller
 {
@@ -17,10 +18,12 @@ class DrinkController extends Controller
      */
     public function index(): View
     {
+        //dd(Request::path());
         return view('drinks', [
             'title' => 'Our Drink Menu',
             'page_title' => 'Drinks',
             'heading' => 'List of Drink recipes with Ingridients to make',
+            'requestPath' => Request::path(),
             'drinks' => Drink::with(['ingridients'])->get()
         ]);
     }

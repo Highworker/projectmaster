@@ -31,16 +31,7 @@
     <div class="logo-search-area">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <div class="search-box">
-                        <form class="search-form">
-                            <input type="search" placeholder="Search Your Queries">
-                            <button type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </form><!-- Search form -->
-                    </div><!-- Search area -->
-                </div>
+                @include('search')
                 <div class="col-md-4 col-sm-4">
                     <div class="logo">
                         <a href="/"><img src="/images/logo.png" alt=""></a>
@@ -75,19 +66,7 @@
                     </div>
                 </div><!-- navbar header -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown active">
-                            <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
-                            <ul class="dropdown-menu sub-menu">
-                                <li><a href="/"><i class="fa fa-angle-double-right"></i>Drinks recipes List</a></li>
-                                <li class="active-child-menu"><a href="/ingridients"><i class="fa fa-angle-double-right"></i>Ingridients List</a></li>
-                                </li>
-                            </ul><!-- sub menu -->
-                        </li><!-- dropdown -->
-                        <li><a href="contact.html">Contacts</a></li>
-                    </ul><!-- navbar-nav -->
-                </div>
+                @include('top-navbar')
             </div>
         </div><!-- container -->
     </div><!-- main menu -->
