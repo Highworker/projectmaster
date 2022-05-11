@@ -3,12 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Orchid\Platform\Models\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-
+    use HasFactory;
     use Notifiable;
 
     /**
@@ -68,4 +69,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'updated_at',
         'created_at',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'id');
+    }
 }

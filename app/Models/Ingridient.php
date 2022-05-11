@@ -11,7 +11,9 @@ use Orchid\Screen\AsSource;
 class Ingridient extends Model
 {
     use HasFactory;
-    use AsSource, Filterable, Attachable;
+    use AsSource;
+    use Filterable;
+    use Attachable;
 
     protected $fillable = [
         'id',

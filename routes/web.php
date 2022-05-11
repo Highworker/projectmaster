@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DrinkController;
 use App\Http\Controllers\IngridientController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -26,6 +27,8 @@ Route::get('/', [DrinkController::class, 'index']);
 Route::get('/drink/{id}', [DrinkController::class, 'show']);
 Route::get('/ingridients', [IngridientController::class, 'index']);
 require __DIR__.'/auth.php';
+
+Route::post('/drink/{id}/comments/add',[CommentController::class, 'add'])->middleware('auth')->name('addComment');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');

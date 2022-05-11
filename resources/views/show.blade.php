@@ -27,11 +27,23 @@
                                     <p><strong>Description: </strong>{{$drink->description}}</p>
                                     <p><strong>Making: </strong>{{$drink->making}}</p>
                                     <p><strong>Ingridients: </strong>
-                                    @foreach($drink->ingridients as $ingridient)
-                                        <p> {{$ingridient->name}} </p>
+                                        @foreach($drink->ingridients as $ingridient)
+                                            <p> {{$ingridient->name}} </p>
                                         @endforeach
                                         </p>
-
+                                    <hr>
+                                        <div>
+                                            @foreach($drink->comments as $comment)
+                                                <p> <strong>{{$comment->user->name}}: </strong> {{$comment->text}} </p>
+                                            @endforeach
+                                        </div>
+                                    <div>
+                                        <form method="POST" action="{{ route('addComment',['id' => $drink->id])}} ">
+                                            @csrf
+                                            <textarea name="comment" onclick="this.value=''">You Comment</textarea>
+                                            <button type="submit">Send</button>
+                                        </form>
+                                    </div>
                                         <!-- <div class="rating-star">
                                                 <i class="fa fa-star-o"></i>
                                                 <i class="fa fa-star-o"></i>

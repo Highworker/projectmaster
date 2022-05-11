@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Drink;
 use App\Models\User;
 use Illuminate\Contracts\Foundation\Application;
@@ -26,7 +27,7 @@ class DrinkController extends Controller
             'heading' => 'List of Drink recipes with Ingridients to make',
             'authUser' => Auth::user(),
             'requestPath' => Request::path(),
-            'drinks' => Drink::with(['ingridients'])->get()
+            'drinks' => Drink::with(['ingridients', 'comments'])->get()
         ]);
     }
 
@@ -37,7 +38,10 @@ class DrinkController extends Controller
     public function show($id): View|Factory|Application
     {
         return view('show', [
-            'drink' => Drink::with(['ingridients'])->find($id)
+            'authUser' => Auth::user(),
+            'requestPath' => Request::path(),
+            'drink' => Drink::with(['ingridients', 'comments'])->find($id),
+            'comments' => Comment::with(['user'])->find($id)
         ]);
     }
 }

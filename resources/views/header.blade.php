@@ -14,9 +14,11 @@
                         @include('login-header')
                     </div>
                 @endguest
-                <div class="col-md-4 col-sm-4">
-                    <p> Login as <strong>{{ $authUser->name }}</strong></p>
-                </div>
+                @auth
+                    <div class="col-md-4 col-sm-4">
+                        <p> Login as <strong>{{ $authUser->name }}</strong><a href="/logout"> Logout</a></p>
+                    </div>
+                @endauth
             </div>
         </div><!-- container -->
     </div><!-- Logo and search area -->
