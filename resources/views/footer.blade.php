@@ -20,64 +20,28 @@
                                 <h2 class="footer-widget-title">Drinkbook News</h2>
                                 <div class="footer-post-item-wrapper">
                                     <ul>
+                                        @foreach($lastComments as $comment)
                                         <li class="post-item style-2">
                                             <div class="post-thumb">
                                                 <a href="#"><img src="/images/footer-images/p-item1.jpg" alt=""></a>
                                             </div>
                                             <div class="post-content">
-                                                <a class="title" href="#">There be a comments to recipes</a>
+                                                <a class="title" href="#">{{$comment['text']}}</a>
                                                 <div class="meta-post">
                                                     <ul>
                                                         <li class="post-author">
                                                             <a href="#">
-                                                                <i class="fa fa-user"></i>some commenter
+                                                                <i class="fa fa-user"></i>{{$comment['username']}}
                                                             </a>
                                                         </li>
-                                                        <li class="post-comments">
+                                                        <!-- <li class="post-comments">
                                                             <a href="#"><i class="fa fa-comments-o"></i>32</a>
-                                                        </li>
+                                                        </li> -->
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </li><!-- post-item -->
-                                        <li class="post-item style-2">
-                                            <div class="post-thumb">
-                                                <a href="#"><img src="/images/footer-images/p-item2.jpg" alt=""></a>
-                                            </div>
-                                            <div class="post-content">
-                                                <a class="title" href="#">There be a comments to recipes</a>
-                                                <div class="meta-post">
-                                                    <ul>
-                                                        <li class="post-author">
-                                                            <a href="#">
-                                                                <i class="fa fa-user"></i>some commenter</a>
-                                                        </li>
-                                                        <li class="post-comments">
-                                                            <a href="#"><i class="fa fa-comments-o"></i>32</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li><!-- post-item -->
-                                        <li class="post-item style-2">
-                                            <div class="post-thumb">
-                                                <a href="#"><img src="/images/footer-images/p-item3.jpg" alt=""></a>
-                                            </div>
-                                            <div class="post-content">
-                                                <a class="title" href="#">There be a comments to recipes</a>
-                                                <div class="meta-post">
-                                                    <ul>
-                                                        <li class="post-author">
-                                                            <a href="#">
-                                                                <i class="fa fa-user"></i>some commenter</a>
-                                                        </li>
-                                                        <li class="post-comments">
-                                                            <a href="#"><i class="fa fa-comments-o"></i>32</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li><!-- post-item -->
+                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div><!-- footer-widget -->
