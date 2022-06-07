@@ -21,7 +21,6 @@ return new class extends Migration
             $table->foreignIdFor(Drink::class);
             $table->timestamps();
             $table->string('text');
-            $table->integer('rating')->nullable(true);
         });
     }
 
