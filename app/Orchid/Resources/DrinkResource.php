@@ -13,7 +13,6 @@ use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Sight;
 use Orchid\Screen\TD;
 
-
 class DrinkResource extends Resource
 {
     /**
@@ -32,7 +31,6 @@ class DrinkResource extends Resource
     public function onSave(ResourceRequest $request, Model $model)
     {
         $model->fill($request->all())->save();
-        // TODO: can i use ternary operator for next IF?
         if ($request->get('ingridients')) {
             $model->ingridients()->sync($request->get('ingridients'));
         }
