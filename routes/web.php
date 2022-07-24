@@ -22,11 +22,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
+require __DIR__.'/auth.php';
 Route::get('/', [DrinkController::class, 'index']);
 Route::get('/drink/{id}', [DrinkController::class, 'show']);
 Route::get('/ingridients', [IngridientController::class, 'index']);
-require __DIR__.'/auth.php';
 
 Route::post('/drink/{id}/comments/add',[CommentController::class, 'add'])->middleware('auth')->name('addComment');
 
