@@ -40,9 +40,6 @@ Route::screen('drinks', DrinkListScreen::class)
             ->push('Drink recipe Add');
     });
 
-Route::screen('/drinks/add', DrinkListScreen::class)->name('platform.drink.list');
-
-
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 
