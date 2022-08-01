@@ -27,7 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /**
         if (Schema::hasTable('comments')) {
             $lastComments = Comment::orderByDesc('created_at')->limit(3)->get();
             $lastComments->transform(function ($comment) use ($lastComments) {
@@ -39,6 +38,5 @@ class AppServiceProvider extends ServiceProvider
             $lastComments = collect($lastComments);
             View::share('lastComments', $lastComments);
         }
-        **/
     }
 }
