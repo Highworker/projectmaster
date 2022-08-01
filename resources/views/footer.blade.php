@@ -20,7 +20,7 @@
                                 <h2 class="footer-widget-title">Drinkbook News</h2>
                                 <div class="footer-post-item-wrapper">
                                     <ul>
-                                        @isset($variable)
+                                        @isset($lastComments)
                                             @foreach($lastComments as $comment)
                                             <li class="post-item style-2">
                                                 <div class="post-thumb">
