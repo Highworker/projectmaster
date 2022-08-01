@@ -30,7 +30,7 @@ Route::post('/drink/{id}/comments/add',[CommentController::class, 'add'])->middl
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+})->middleware('auth');
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
