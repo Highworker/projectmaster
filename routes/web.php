@@ -17,28 +17,26 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+require __DIR__.'/auth.php';
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
 Route::get('/', [DrinkController::class, 'index']);
 Route::get('/drink/{id}', [DrinkController::class, 'show']);
 Route::get('/ingridients', [IngridientController::class, 'index']);
-require __DIR__.'/auth.php';
 
 Route::post('/drink/{id}/comments/add',[CommentController::class, 'add'])->middleware('auth')->name('addComment');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+})->middleware('auth');
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
 
     return redirect('/home');
-})->middleware(['auth', 'signed'])->name('verification.verify');
+})->middleware(['auth', 'signed']);
 
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
