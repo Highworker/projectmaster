@@ -11,7 +11,7 @@
                 </div>
                 @guest
                     <div class="col-md-4 col-sm-4">
-                        <p> need to fix login component</a></p>
+                        @include('login-header')
                     </div>
                 @endguest
                 @auth
