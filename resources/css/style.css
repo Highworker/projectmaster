@@ -1952,7 +1952,6 @@ a.button{
 .dotted-name{
 	width: 2%;
 	display: table-cell;
-	white-space: nowrap;
 }
 
 .dotted-name a{

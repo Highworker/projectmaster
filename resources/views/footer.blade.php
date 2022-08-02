@@ -24,7 +24,7 @@
                                             @foreach($lastComments as $comment)
                                             <li class="post-item style-2">
                                                 <div class="post-thumb">
-                                                    <a href="#"><img src="/images/footer-images/p-item1.jpg" alt=""></a>
+                                                    <a href="#"><img src="" alt=""></a>
                                                 </div>
                                                 <div class="post-content">
                                                     <a class="title" href="#">{{$comment['text']}}</a>

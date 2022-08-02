@@ -1,6 +1,6 @@
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="true" style="">
     <ul class="nav navbar-nav">
-        <li class="dropdown active">
+        <li class="dropdown">
             <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
             <ul class="dropdown-menu sub-menu">
                 <li class="@if($requestPath == '/') {{'active-child-menu'}} @endif">
@@ -12,7 +12,6 @@
                     <a href="/ingridients">
                         <i class="fa fa-angle-double-right"></i>Ingridients List
                     </a>
-                </li>
                 </li>
             </ul><!-- sub menu -->
         </li><!-- dropdown -->

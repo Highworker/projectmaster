@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-8 col-sm-8">
                     <div class="logo">
-                        <a href="/"><img src="/images/logo.png" alt=""></a>
+                        <a href="/"><img src="" alt=""></a>
                     </div><!-- logo -->
                 </div>
                 @guest
@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand logo" href="#">
-                        <img src="/images/logo2.png" alt="">
+                        <img src="" alt="">
                     </a>
                     <div class="search-area">
                         <i class="fa fa-search icon-1"></i>
