@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name')->nullable(true);
             $table->string('making')->nullable(true);
             $table->string('description')->nullable(true);
+            $table->string('image');
         });
     }
 
