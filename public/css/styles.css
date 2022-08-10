@@ -6531,7 +6531,8 @@ a.button{
 }
 
 .food-item-img img{
-    min-height: 250px;
+    height: 250px;
+    width: 250px;
 }
 
 .food-item .dotted-title{

@@ -22,6 +22,7 @@ class Drink extends Model
         'name',
         'making',
         'description',
+        'image',
         'drink_id',
         'ingridient_id'
     ];

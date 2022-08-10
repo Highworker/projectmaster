@@ -6,6 +6,7 @@ use App\Models\Drink;
 use App\Models\Ingridient;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Orchid\Crud\Resource;
 use Orchid\Crud\ResourceRequest;
 use Orchid\Screen\Fields\Input;
@@ -33,6 +34,12 @@ class DrinkResource extends Resource
         $model->fill($request->all())->save();
         if ($request->get('ingridients')) {
             $model->ingridients()->sync($request->get('ingridients'));
+        }
+        if ($request->file()) {
+            $path = Storage::put('public', $request->input('image'));
+            $model
+                ->setAttribute('image',(Storage::url($path)))
+                ->save();
         }
     }
 
@@ -65,6 +72,10 @@ class DrinkResource extends Resource
             Input::make('making')
                 ->title('Making')
                 ->placeholder('Enter making here'),
+            Input::make('image')
+                ->title('Image')
+                ->type('file')
+                ->placeholder('Upload Drink pic'),
             Relation::make('ingridients')
                 ->title('Ingridients')
                 ->multiple()
@@ -84,6 +95,7 @@ class DrinkResource extends Resource
         return [
             TD::make('name'),
             TD::make('making'),
+            TD::make('image'),
             TD::make('description'),
         ];
     }

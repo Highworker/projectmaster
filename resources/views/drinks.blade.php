@@ -25,7 +25,9 @@
                         <div class="element-item transition breakfast lunch drinks col-md-6 col-sm-6">
                             <div class="food-item">
                                 <div class="food-item-img">
-                                    <a href="#"><img src="images/food-menu/item4.jpg" alt=""></a>
+                                    @isset($drink->image)
+                                        <a href="#"><img src="{{$drink->image}}" alt=""></a>
+                                    @endisset
                                 </div>
                                 <div class="food-item-details">
                                     <div class="dotted-title">
