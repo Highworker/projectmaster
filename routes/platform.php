@@ -32,14 +32,6 @@ use Tabuna\Breadcrumbs\Trail;
 */
 
 // Main
-Route::screen('drinks', DrinkListScreen::class)
-    ->name('platform.drink.list')
-    ->breadcrumbs(function (Trail $trail){
-        return $trail
-            ->parent('platform.index')
-            ->push('Drink recipe Add');
-    });
-
 Route::screen('/main', PlatformScreen::class)
     ->name('platform.main');
 

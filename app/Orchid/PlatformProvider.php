@@ -28,11 +28,6 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
-            Menu::make('Drink recipe Add')
-                ->icon('envelope-letter')
-                ->route('platform.drink.list')
-                ->title('Tools'),
-
             Menu::make(__('Users'))
                 ->icon('user')
                 ->route('platform.systems.users')
