@@ -26,7 +26,7 @@
                             <div class="food-item">
                                 <div class="food-item-img">
                                     @isset($drink->image)
-                                        <a href="#"><img src="{{$drink->image}}" alt=""></a>
+                                        <a href="/drink/{{$drink->id}}"><img src="{{$drink->image}}" alt=""></a>
                                     @endisset
                                 </div>
                                 <div class="food-item-details">
