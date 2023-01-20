@@ -37,7 +37,6 @@
 
                                     </div><!-- dotted title -->
                                     <p><strong>Description: </strong>{{$drink->description}}</p>
-                                    <p><strong>Making: </strong>{{$drink->making}}</p>
                                     <p><strong>Ingridients: </strong>
                                         @foreach($drink->ingridients as $ingridient)
                                             <p> {{$ingridient->name}} </p>
