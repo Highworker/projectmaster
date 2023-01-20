@@ -6,18 +6,18 @@
                     <div class="footer-widget-wrapper">
                         <div class="col-md-6 col-sm-6">
                             <div class="footer-widget">
-                                <h2 class="footer-widget-title">About Drinkbook</h2>
+                                <h2 class="footer-widget-title">About ProjectMaster</h2>
                                 <div class="excerpt">
-                                    Represent a Drink recipes, and Ingridients for these recipes
+                                    Represent a Projects of Dalee, and some Sections of them
                                 </div>
                                 <h2 class="footer-btn">
-                                    <a href="https://github.com/Highworker/drinkbook" target="_blank">GitHub.com / Highworker / drinkbook <i class="fa fa-angle-double-right"></i></a>
+                                    <a href="https://github.com/Highworker/projectmaster" target="_blank">GitHub.com / Highworker / projectmaster <i class="fa fa-angle-double-right"></i></a>
                                 </h2>
                             </div><!-- footer-widget -->
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="footer-widget">
-                                <h2 class="footer-widget-title">Drinkbook News</h2>
+                                <h2 class="footer-widget-title">ProjectMaster News</h2>
                                 <div class="footer-post-item-wrapper">
                                     <ul>
                                         @isset($lastComments)

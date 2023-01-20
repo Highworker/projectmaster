@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
-class DrinkController extends Controller
+class ProjectController extends Controller
 {
 
     /**
@@ -22,9 +22,9 @@ class DrinkController extends Controller
     public function index(): View
     {
         return view('drinks', [
-            'title' => 'Our Drink Menu',
-            'page_title' => 'Drinks',
-            'heading' => 'List of Drink recipes with Ingridients to make',
+            'title' => 'Dalee Projects',
+            'page_title' => 'Projects',
+            'heading' => 'List of Projects',
             'authUser' => Auth::user(),
             'requestPath' => Request::path(),
             'drinks' => Drink::with(['ingridients', 'comments'])->get()

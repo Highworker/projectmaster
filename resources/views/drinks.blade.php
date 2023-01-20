@@ -26,13 +26,13 @@
                             <div class="food-item">
                                 <div class="food-item-img">
                                     @isset($drink->image)
-                                        <a href="/drink/{{$drink->id}}"><img src="{{$drink->image}}" alt=""></a>
+                                        <a href="/project/{{$drink->id}}"><img src="{{$drink->image}}" alt=""></a>
                                     @endisset
                                 </div>
                                 <div class="food-item-details">
                                     <div class="dotted-title">
                                         <div class="dotted-name">
-                                            <a href="/drink/{{$drink->id}}">{{ $drink->name}}</a>
+                                            <a href="/project/{{$drink->id}}">{{ $drink->name}}</a>
                                         </div>
 
                                     </div><!-- dotted title -->

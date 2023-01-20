@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\IngridientController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -22,11 +22,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/', [DrinkController::class, 'index']);
-Route::get('/drink/{id}', [DrinkController::class, 'show']);
+Route::get('/', [ProjectController::class, 'index']);
+Route::get('/project/{id}', [ProjectController::class, 'show']);
 Route::get('/ingridients', [IngridientController::class, 'index']);
 
-Route::post('/drink/{id}/comments/add',[CommentController::class, 'add'])->middleware('auth')->name('addComment');
+Route::post('/project/{id}/comments/add',[CommentController::class, 'add'])->middleware('auth')->name('addComment');
 
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
